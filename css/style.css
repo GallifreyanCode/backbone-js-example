@@ -1,0 +1,9 @@
+.developer-container { width:400px; padding:10px; border:1px solid #aaa; margin:0 10px 10px 0; float:left; font-family:sans-serif; color:#333; background-color:#eee; }
+.developer-container h1 { margin:0; font-weight:normal; }
+.developer-container h1 span { float:right; font-size:14px; line-height:24px; font-weight:normal; }
+.developer-container img { border-width:1px; border-style:solid; border-color:#fff; border-right-color:#aaa; border-bottom-color:#aaa; margin-right:10px; float:left; }
+.developer-container div { margin-bottom:24px; font-size:14px; }
+.developer-container a { color:#333;}
+.developer-container dl { margin:0; float:left; font-size:14px; }
+.developer-container dt, .developer-container dd { margin:0; float:left; }
+.developer-container dt { width:80px; clear:left; }
