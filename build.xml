@@ -1,13 +1,47 @@
 <?xml version="1.0"?>
 <project name="Backbone.js Web App" default="install">
-    <target name="install" depends="getProperties,installTarget"/>
+    <target name="install" depends="getProperties,installTarget,compressJS,compressCSS"/>
     <target name="clean" depends="getProperties,cleanTarget"/>
 
     <target name="getProperties">
         <property file="build.properties"/>
         <echo>Properties imported and active.</echo>
     </target>
-  
+	
+	<target name="compressJS">
+		<echo>Compressing JavaScript...</echo>
+		<antcall target="compress">
+			<param name="file" value="${build_location}/${js_dir}/backbone.js" />
+		</antcall>
+		<antcall target="compress">
+			<param name="file" value="${build_location}/${js_dir}/underscore.js" />
+		</antcall>
+		<antcall target="compress">
+			<param name="file" value="${build_location}/${js_dir}/jquery-1.7.2.js" />
+		</antcall>
+		<antcall target="compress">
+			<param name="file" value="${build_location}/${js_dir}/app.js" />
+		</antcall>
+		<echo>JavaScript compression complete.</echo>
+	</target>
+	
+	<target name="compressCSS">
+		<echo>Compressing CSS...</echo>
+		<antcall target="compress">
+			<param name="file" value="${build_location}/${css_dir}/style.css" />
+		</antcall>
+		<echo>CSS compression complete.</echo>
+	</target>
+
+	<target name="compress">
+    <java jar="./bin/yuicompressor-2.4.7.jar" fork="true">
+        <arg value="${file}" />
+        <arg value="-o" />
+        <arg value="${file}" />
+    </java>
+    <echo>${file}</echo>
+	</target>
+
     <target name="installTarget">
         <echo>Installing site at build location...</echo>
         <copy file="./index.html" todir="${build_location}/"/>

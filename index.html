@@ -6,8 +6,21 @@
         <link rel="stylesheet" href="css/style.css" />
     </head>
     <body>
-        <div id="developers"></div>
-
+        <div id="developers">
+            <header>
+                <div id="filter"><label>Filter on:</label></div>
+                <a id="showForm" href="#">Add new developer</a>
+                <form id="addDeveloper" action="#">
+                    <label for="photo">Photo:</label><input id="photo" type="file" />
+                    <label for="name">Name:</label><input id="name" />
+                    <label for="type">Type:</label><input id="type" />
+                    <label for="skill">Skills:</label><input id="skill" />
+                    <label for="company">Company:</label><input id="company" />
+                    <label for="email">Email:</label><input id="email" />
+                    <button id="add">Add</button>
+                </form>
+            </header> 
+        </div>
         <script id="developerTemplate" type="text/template">
             <img src="<%= photo %>" alt="<%= name %>" />
             <h1><%= name %><span><%= type %></span></h1>
@@ -16,6 +29,20 @@
                 <dt>Company:</dt><dd><%= company %></dd>
                 <dt>Email:</dt><dd><a href="mailto:<%= email %>"><%= email %></a></dd>
             </dl>
+            <button class="edit">Edit</button>
+            <button class="delete">Delete</button>
+        </script>
+        <script id="developerEditTemplate" type="text/template">
+            <form action="#">
+                <input type="file" value="<%= photo %>" />
+                <input class="name" value="<%= name %>" />
+                <input id="type" type="hidden" value="<%= type %>" />
+                <input class="skill" value="<%= skill %>" />
+                <input class="company" value="<%= company %>" />
+                <input class="email" value="<%= email %>" />
+                <button class="save">Save</button>
+                <button class="cancel">Cancel</button>
+            </form>
         </script>
         <script src="js/jquery-1.7.2.js"></script>
         <script src="js/underscore.js"></script>

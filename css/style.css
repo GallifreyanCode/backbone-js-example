@@ -1,4 +1,5 @@
-.developer-container { width:400px; padding:10px; border:1px solid #aaa; margin:0 10px 10px 0; float:left; font-family:sans-serif; color:#333; background-color:#eee; }
+#developers { width:1300px; margin:auto; }
+.developer-container { width:400px; padding:10px; border:1px solid #aaa; margin:0 10px 10px 0; position:relative; float:left; font-family:sans-serif; color:#333; background-color:#eee; }
 .developer-container h1 { margin:0; font-weight:normal; }
 .developer-container h1 span { float:right; font-size:14px; line-height:24px; font-weight:normal; }
 .developer-container img { border-width:1px; border-style:solid; border-color:#fff; border-right-color:#aaa; border-bottom-color:#aaa; margin-right:10px; float:left; }
@@ -7,3 +8,16 @@
 .developer-container dl { margin:0; float:left; font-size:14px; }
 .developer-container dt, .developer-container dd { margin:0; float:left; }
 .developer-container dt { width:80px; clear:left; }
+.developer-container button { margin-top:10px; float:right; }
+
+header { margin-bottom:10px; }
+header:after { content:""; display:block; height:0; visibility:hidden; clear:both; font-size:0; line-height:0; }
+
+#filter { float:left; }
+#showForm { float:right; }
+#addDeveloper { display:none; width:466px; float:right; clear:both; font-family:sans-serif; font-size:14px; }
+#addDeveloper label { width:60px; margin-right:10px; text-align:right; line-height:25px; }
+#addDeveloper label, #addDeveloper input { display:block; margin-bottom:10px; float:left; }
+#skill { width:380px; margin-left:2px; }
+#addDeveloper label[for="name"], #addDeveloper label[for="skill"], #addDeveloper label[for="company"] { clear:both; }
+#addDeveloper button { display:block; margin:10px 10px 0 0; float:right; clear:both; }
